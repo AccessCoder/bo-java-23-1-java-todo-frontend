@@ -28,4 +28,8 @@ public class TodoService {
     public TodoElement updateTodo(TodoElement todoElement) {
         return repo.updateTodo(todoElement);
     }
+
+    public TodoElement deleteTodo(String id) {
+        return repo.deleteTodo(id);
+    }
 }
