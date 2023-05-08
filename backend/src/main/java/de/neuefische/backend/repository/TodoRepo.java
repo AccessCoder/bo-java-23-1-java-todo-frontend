@@ -28,7 +28,7 @@ public class TodoRepo {
         if (database.containsKey(id)){
             return database.get(id);
         }else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No User found with ID:" + id);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No Todo found with ID:" + id);
         }
 
     }

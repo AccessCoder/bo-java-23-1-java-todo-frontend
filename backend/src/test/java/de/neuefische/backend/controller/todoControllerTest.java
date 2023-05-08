@@ -78,7 +78,13 @@ class todoControllerTest {
         //WHEN & THEN
 
             mockMvc.perform(MockMvcRequestBuilders.get("/api/todo/imInvalid"))
-                    .andExpect(status().is(404));
+                    .andExpect(status().is(404))
+                    .andExpect(result -> assertTrue(result.getResolvedException() instanceof ResponseStatusException))
+                    .andExpect(result -> {
+                        ResponseStatusException exception = (ResponseStatusException) result.getResolvedException();
+                        assert exception != null;
+                        assertEquals("404 NOT_FOUND \"No Todo found with ID:imInvalid\"", exception.getMessage());
+                    });
 
     }
 
