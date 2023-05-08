@@ -15,4 +15,9 @@ public class TodoRepo {
     public List<TodoElement> getAllTodo() {
         return new ArrayList<>(database.values());
     }
+
+    public TodoElement addTodo(TodoElement todoElement){
+        database.put(todoElement.getId(), todoElement);
+        return database.get(todoElement.getId());
+    }
 }

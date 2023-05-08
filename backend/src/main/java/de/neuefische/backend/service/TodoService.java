@@ -12,7 +12,12 @@ import java.util.List;
 public class TodoService {
 
     private final TodoRepo repo;
+    private final RandomIdService randomIdService;
     public List<TodoElement> getAllTodo() {
         return repo.getAllTodo();
+    }
+
+    public TodoElement addTodo(TodoElement todoElement) {
+        return repo.addTodo(todoElement.withId(randomIdService.generateRandomId()));
     }
 }
