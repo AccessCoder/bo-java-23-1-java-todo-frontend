@@ -20,4 +20,8 @@ public class TodoService {
     public TodoElement addTodo(TodoElement todoElement) {
         return repo.addTodo(todoElement.withId(randomIdService.generateRandomId()));
     }
+
+    public TodoElement getTodoById(String id) {
+        return repo.getTodoById(id);
+    }
 }
