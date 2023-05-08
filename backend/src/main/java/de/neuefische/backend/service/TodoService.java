@@ -24,4 +24,8 @@ public class TodoService {
     public TodoElement getTodoById(String id) {
         return repo.getTodoById(id);
     }
+
+    public TodoElement updateTodo(TodoElement todoElement) {
+        return repo.updateTodo(todoElement);
+    }
 }
