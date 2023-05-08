@@ -32,10 +32,10 @@ public class TodoRepo {
         }
 
     }
-    public TodoElement updateTodo(TodoElement todoElement) {
-        getTodoById(todoElement.getId());
-        database.replace(todoElement.getId(), todoElement);
-        return database.get(todoElement.getId());
+    public TodoElement updateTodo(String id, TodoElement todoElement) {
+        getTodoById(id);
+        database.replace(id, todoElement);
+        return database.get(id);
     }
 
     public TodoElement deleteTodo(String id) {

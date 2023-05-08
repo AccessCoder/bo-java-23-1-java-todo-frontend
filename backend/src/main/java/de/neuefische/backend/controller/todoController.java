@@ -30,8 +30,8 @@ public class todoController {
     }
 
     @PutMapping("/{id}")
-    public TodoElement updateTodo(@RequestBody TodoElement todoElement){
-        return service.updateTodo(todoElement);
+    public TodoElement updateTodo(@PathVariable String id, @RequestBody TodoElement todoElement){
+        return service.updateTodo(id, todoElement);
     }
 
     @DeleteMapping("/{id}")
