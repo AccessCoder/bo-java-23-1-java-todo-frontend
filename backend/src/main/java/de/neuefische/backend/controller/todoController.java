@@ -29,4 +29,9 @@ public class todoController {
         return service.getTodoById(id);
     }
 
+    @PutMapping("/{id}")
+    public TodoElement updateTodo(@RequestBody TodoElement todoElement){
+        return service.updateTodo(todoElement);
+    }
+
 }
