@@ -76,17 +76,13 @@ class todoControllerTest {
         //GIVEN
 
         //WHEN & THEN
+        // besser wäre es für den User, wenn eine Eindeutige, vllt auch einzeilige Fehlermeldung zurückgegeben wird
+        // nach dieser können wir auch besser testen statt, das Object so zu manipulieren bis wir an die Fehlermeldung kommen
 
         mockMvc.perform(MockMvcRequestBuilders.get("/api/todo/imInvalid"))
                 .andExpect(status().is(404))
                 .andExpect(result -> assertTrue(result.getResolvedException() instanceof ResponseStatusException))
-                .andExpect(result -> {
-                    ResponseStatusException exception = (ResponseStatusException) result.getResolvedException();
-                    assert exception != null;
-                    assertEquals("404 NOT_FOUND \"No Todo found with ID:imInvalid\"", exception.getMessage());
-                });
-        // besser wäre es für den User, wenn eine Eindeutige, vllt auch einzeilige Fehlermeldung zurückgegeben wird
-        // nach dieser können wir auch besser testen statt, das Object so zu manipulieren bis wir an die Fehlermeldung kommen
+                .andExpect(status().reason("No Todo found with ID:imInvalid"));
 
     }
 
