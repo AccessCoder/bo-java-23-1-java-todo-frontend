@@ -20,4 +20,8 @@ public class TodoRepo {
         database.put(todoElement.getId(), todoElement);
         return database.get(todoElement.getId());
     }
+
+    public TodoElement getTodoById(String id) {
+        return database.get(id);
+    }
 }

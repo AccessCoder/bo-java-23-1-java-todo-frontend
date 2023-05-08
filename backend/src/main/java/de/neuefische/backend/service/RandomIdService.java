@@ -1,7 +1,9 @@
 package de.neuefische.backend.service;
 
-import java.util.UUID;
+import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+@Service
 public class RandomIdService {
 
     public String generateRandomId(){

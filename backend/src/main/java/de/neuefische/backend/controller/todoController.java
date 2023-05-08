@@ -24,4 +24,9 @@ public class todoController {
         return service.addTodo(todoElement);
     }
 
+    @GetMapping("/{id}")
+    public TodoElement getTodoById(@PathVariable String id){
+        return service.getTodoById(id);
+    }
+
 }
